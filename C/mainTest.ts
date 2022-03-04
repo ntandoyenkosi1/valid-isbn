@@ -51,4 +51,18 @@ describe("Tests", () => {
 			assert.equal(result, "Invalid");
 		});
 	});
+	describe("Invalid Isbn", () => {
+		it("Should return invalid for incorrect length of character: less characters", () => {
+			//var res = 2;
+			var main = new Main();
+			var result = main.Isbn("978387");
+			assert.equal(result, "Invalid");
+		});
+		it("Should return invalid for incorrect length of characters: more characters", () => {
+			//var res = 2;
+			var main = new Main();
+			var result = main.Isbn("9783876384415523X");
+			assert.equal(result, "Invalid");
+		});
+	});
 });
