@@ -37,29 +37,29 @@ export class Main {
 				/**
 				 * Stores new isbn that is returned
 				 */
-				var newIsbn = "978" + isbn.substring(0, isbn.length - 1);
+				isbn = "978" + isbn.substring(0, isbn.length - 1);
 				/**
-				 * Stores new sum of products
+				 * Reset sum
 				 */
-				var newSum = 0;
-				for (var i = 0; i < newIsbn.length; i++) {
-					if (newIsbn[i].toLowerCase() == "x") {
-						newSum += 10;
+				sum = 0;
+				for (var i = 0; i < isbn.length; i++) {
+					if (isbn[i].toLowerCase() == "x") {
+						sum += 10;
 					} else {
-						newSum += isbn13[i] * Number(newIsbn[i]);
+						sum += isbn13[i] * Number(isbn[i]);
 					}
 				}
 				/**
 				 * Check remainder
 				 */
-				var remainder = newSum % 10;
+				var remainder = sum % 10;
 				if (remainder == 0) {
-					newIsbn += remainder;
+					isbn += remainder;
 				} else {
 					var lastChar = 10 - remainder;
-					newIsbn += lastChar;
+					isbn += lastChar;
 				}
-				return newIsbn;
+				return isbn;
 			}
 			return "Invalid";
 		} else if (isbn.length == 13) {
