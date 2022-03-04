@@ -1,0 +1,6 @@
+.vscode
+node_modules
+index.js
+index.ts
+main.js
+mainTest.js
